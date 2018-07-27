@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<TITLE>KeyGenerator</TITLE>
+<script type="text/javascript" src="./KeyGenerator.js"></script>
+</HEAD>
+<BODY>
+  <form name="Form1">
+    <label>桁数：</label><input type="text" id="numText" value="50" size="4"
+     onkeypress="onEnter(event.keyCode);" style="text-align: right;"/>
+    <br>
+    <input type="button" value="実行" onclick="genarate()"/>
+    <script>
+      function onEnter(code){
+        if( code == 13 ) genarate();
+        return true;
+      }
+      function genarate(){
+        var numText = document.getElementById("numText").value;
+        document.getElementById("pwLabel1").innerHTML=keyGenarate(numText);
+        return true;
+      }
+    </script>
+    <br>
+    <div id="pwLabel1">password text</div>
+  </FORM>
+</BODY>
+</HTML>
